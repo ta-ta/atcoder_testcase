@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 '''
-python estcases.py https://atcoder.jp/contests/agc001/tasks/agc001_a A.c++
+python testcases.py https://atcoder.jp/contests/agc001/tasks/agc001_a A.c++
 '''
 
 import argparse
