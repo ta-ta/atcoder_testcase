@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 '''
-`python ../scripts/testcases.py https://atcoder.jp/contests/agc008/tasks/agc008_a A.c++`
+python testcases.py https://atcoder.jp/contests/agc001/tasks/agc001_a A.c++
 '''
 
 import argparse
