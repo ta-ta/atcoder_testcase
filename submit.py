@@ -79,7 +79,7 @@ def submit(session, problem_URL, sourceCode, LanguageId):
                 'data.LanguageId': LanguageId,
                 'sourceCode': sourceCode,
                 'csrf_token': csrf_token}
-    #response = session.post(submit_URL, data=submit_data)
+    response = session.post(submit_URL, data=submit_data)
     logger.info('POST submit status: ' + logging_status_code(response.status_code))
     response.raise_for_status()
     logger.info(WJ_MESSAGE)
