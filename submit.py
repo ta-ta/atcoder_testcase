@@ -28,6 +28,7 @@ def logging_status_code(status_code):
 
 def login(session):
     try:
+        # cookieは定期的にrefreshする必要あり？
         with open(COOKIE, mode='r') as f:
             cookie = json.load(f)
             for k, v in cookie.items():
@@ -70,9 +71,11 @@ def submit(session, problem_URL, sourceCode, LanguageId):
     response.raise_for_status()
 
     response_html = bs4.BeautifulSoup(response.text, 'html.parser')
-    TaskScreenName = response_html.find('input', attrs={'name': 'data.TaskScreenName'})['value']
+    #TaskScreenName = response_html.find('input', attrs={'name': 'data.TaskScreenName'})['value']
+    TaskScreenName = problem_URL.split('/')[-1]
     csrf_token = response_html.find('input', attrs={'name': 'csrf_token'})['value']
-    submit_URL = ATCODER + response_html.find('form', attrs={'class': 'form-horizontal'})['action']
+    #submit_URL = ATCODER + response_html.find('form', attrs={'class': 'form-horizontal'})['action']
+    submit_URL = ATCODER + '/' + '/'.join(problem_URL.split('/')[3:5]) + '/submit'
 
     submit_data={'data.TaskScreenName': TaskScreenName,
                 'data.LanguageId': LanguageId,
