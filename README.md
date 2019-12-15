@@ -29,3 +29,6 @@ export ATCODER_TESTCASE="$HOME/.atcoder-testcase"
 - Go(1.6)
 
 `valid_file_ext.py` に追加することで他の言語にも対応可.  
+
+---
+alias atcoder-testcases="python XXX/atcoder_testcase/testcases.py"
