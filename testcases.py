@@ -65,7 +65,7 @@ def get_samples(problem_URL, testcase_preffix):
 def make_compile_command(program_file, file_ext):
     # compile command 作成
     if file_ext == CPP:
-        return ["/usr/local/bin/g++-9", program_file, '-o', program_file.split('.')[0]]
+        return ["/usr/local/bin/g++-10", program_file, '-o', program_file.split('.')[0]]
     return None
 
 def compile(compile_command):
