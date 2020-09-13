@@ -32,3 +32,6 @@ export ATCODER_TESTCASE="$HOME/.atcoder-testcase"
 
 ---
 alias atcoder-testcases="python XXX/atcoder_testcase/testcases.py"
+
+`atcoder-testcases https://atcoder.jp/contests/abc001/tasks/abc001_a A.c++ -s`
+
