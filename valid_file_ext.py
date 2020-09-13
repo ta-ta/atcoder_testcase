@@ -4,9 +4,9 @@ CPP = 'c++'
 PY = 'py'
 GO = 'go'
 VALID_EXT = [CPP, PY, GO]
-LANGUAGE_IDS = {CPP: 3003,
-                PY: 3023,
-                GO: 3013}
+LANGUAGE_IDS = {CPP: 4003,
+                PY: 4006,
+                GO: 4026}
 
 def get_file_extention(filename):
     # 拡張子の取得
