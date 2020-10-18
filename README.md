@@ -28,7 +28,7 @@ optional arguments:
   -s, --submit      submit the file when all testcases pass
 ```
 
-### 対象言語
+### 対象言語の設定
 https://github.com/tatakahashi35/atcoder_testcase/blob/master/atcoder.py#L19-L26
 
 
