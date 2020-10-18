@@ -3,35 +3,38 @@
 - 作成したプログラムのテストを実行する
 - サブミットする
 
-## 事前準備
-環境変数を設定する
-```sh
+## install
+``` sh
+cd
+git clone https://github.com/tatakahashi35/atcoder_testcase.git
+
 export ATCODER_TESTCASE="$HOME/.atcoder-testcase"
+mkdir atcoder_testcase/testcases
 ```
 
-## 使用方法
-### テストケースの確認
-`python testcase.py 問題URL ファイル`  
-問題ページから`*-NUMBER.in`, `*-NUMBER.out`の形式で保存  
-テストケースの確認をする  
+## 実行方法
+`python main.py 問題URL ファイル`  
+```
+$ python main.py --help
+usage: main.py [-h] [-d] [-s] url file
 
-オプション
-- `-d`: テストケースの再取得
-- `-s`: 全てのテストケースに通ったとき、サブミットする
+positional arguments:
+  url               problem URL
+  file              program file
 
-### サブミット
-`python submit.py 問題URL ファイル`  
-
+optional arguments:
+  -h, --help        show this help message and exit
+  -d, --redownload  re-download testcases
+  -s, --submit      submit the file when all testcases pass
+```
 
 ### 対象言語
-- C++14(GCC 5.4.1)
-- Python3(3.4.3)
-- Go(1.6)
+https://github.com/tatakahashi35/atcoder_testcase/blob/master/atcoder.py#L19-L26
 
-`valid_file_ext.py` に追加することで他の言語にも対応可.  
 
----
-alias atcoder-testcases="python XXX/atcoder_testcase/testcases.py"
+### エイリアス設定
+```
+alias atc="python $HOME/atcoder_testcase/main.py"
 
-`atcoder-testcases https://atcoder.jp/contests/abc001/tasks/abc001_a A.c++ -s`
-
+atc https://atcoder.jp/contests/abc001/tasks/abc001_a A.c++ -s
+```
