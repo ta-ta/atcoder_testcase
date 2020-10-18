@@ -1,15 +1,13 @@
-# -*- coding: utf-8 -*-
+from logging import getLogger, Formatter, StreamHandler, INFO
 
-import logging
+def get_logger(name):
+    logger = getLogger(name)
+    logger.setLevel(INFO)
+    formatter = Formatter('%(message)s')
 
-from config import LOGGER
+    handler = StreamHandler()
+    handler.setLevel(INFO)
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
 
-formatter = logging.Formatter('%(message)s')
-
-logger = logging.getLogger(LOGGER)
-logger.setLevel(logging.INFO)
-
-handler = logging.StreamHandler()
-handler.setLevel(logging.INFO)
-handler.setFormatter(formatter)
-logger.addHandler(handler)
+    return logger
